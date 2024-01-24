@@ -1,0 +1,126 @@
+/* Custom styles for the three-column layout */
+.container {
+    max-width: 100%; /* Full width container */
+}
+
+/* Styles for the slides to fit well in the middle column */
+#home, #skills, #projects, #contact {
+    width: 100%; /* Ensure slides fit the column width */
+    margin: auto; /* Centering within the column */
+    min-height: 500px; /* Adjust as needed */
+    color: white;
+}
+
+/* Styles for individual slides with background images */
+#home {
+    background-image: url('my\ pic.jpg');
+    background-size: contain;
+    background-position: center;
+    background-color: none;
+    background-repeat: no-repeat;
+}
+
+#skills {
+    background-image: url('light\ theme\ skills.webp');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#projects {
+    background-image: url('dark\ theme.webp');
+    background-size: contain;
+    background-position: unset;
+    background-repeat: no-repeat;
+}
+
+#contact {
+    background-image: url('dark\ circle.webp');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* General slide styles */
+.slide {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: top center; /* Adjust as needed */
+}
+
+@media (max-width: 768px) {
+    .slide {
+        min-height: 300px; /* Shorter height for smaller screens */
+    }
+}
+
+/* Styles for the navbar */
+nav.navbar {
+    height: 200px; /* Adjust this value as needed */
+    padding-top: 40px; /* Adjust top padding */
+    padding-bottom: 40px; /* Adjust bottom padding */
+    background-color: #E7DFC6 !important;
+}
+
+nav.navbar a {
+    font-size: 3rem; /* Adjust font size as needed */
+    color: #2274A5;
+}
+
+/* Footer styles */
+footer {
+    /* Add any specific styles for your footer here */
+}
+
+/* Styles for the skills section */
+.skill-item {
+    margin-bottom: 20px; /* Space between skill bars */
+    color: black;
+}
+
+.skill-name {
+    font-size: 16px; /* Adjust as needed */
+    margin-bottom: 5px; /* Space between skill name and bar */
+}
+
+.progress {
+    background-color: #e1e1e1; /* Light grey background */
+    border-radius: 5px; /* Rounded corners */
+    height: 20px;
+}
+
+.progress-bar {
+    color: black; /* Color of the text inside the bar */
+    display: flex;
+    align-items: center; /* Centers text vertically */
+    justify-content: center; /* Centers text horizontally */
+    font-weight: bold; /* Makes the text bold */
+    transition: width 1s ease-in-out; /* Smooth transition for bar animation */
+}
+
+/* Custom color classes for progress bars */
+.progress .color-python { background-color: #0d8029; }
+.progress .color-html { background-color: #95bd39; }
+.progress .color-javascript { background-color: #bea328; }
+.progress .color-css { background-color: #80ca3b; }
+.progress .color-bootstrap { background-color: #bd6116; }
+.progress .color-cpp { background-color: #7ebe17; }
+.progress .color-json { background-color: #6eaf18; } /* Example color for JSON */
+.progress .color-xml { background-color: #6eaf18; } /* Example color for XML */
+
+
+.skill-item {
+    color: black;
+}
+
+
+.col-lg-4 {
+
+    background-color: #131B23;
+}
+
+nav h1 {
+    color: #816C61;
+}
+
