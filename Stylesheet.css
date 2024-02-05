@@ -88,11 +88,11 @@ footer {
 .skill-name {
     font-size: 16px; /* Adjust as needed */
     margin-bottom: 5px; /* Space between skill name and bar */
-    color: white;
+    color: black;
 }
 
 .mb-3 {
-    color: white;
+    color: black;
 }
 
 .progress {
