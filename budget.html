@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSV Viewer</h1>
+        <input type="file" id="fileInput" accept=".csv">
+        <div id="tableContainer" class="table-container">
+            <table id="csvTable"></table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("fileInput").addEventListener("change", function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const text = e.target.result;
+                    displayCSV(text);
+                };
+                reader.readAsText(file);
+            }
+        });
+
+        function displayCSV(data) {
+            const rows = data.split("\n").map(row => row.split(","));
+            const table = document.getElementById("csvTable");
+            table.innerHTML = ""; // Clear the table
+
+            rows.forEach((row, index) => {
+                const tr = document.createElement("tr");
+                row.forEach(cell => {
+                    const cellElement = index === 0 ? document.createElement("th") : document.createElement("td");
+                    cellElement.textContent = cell;
+                    tr.appendChild(cellElement);
+                });
+                table.appendChild(tr);
+            });
+
+            // Add CSS classes for better appearance
+            table.classList.add("styled-table");
+        }
+    </script>
+</body>
+</html>
