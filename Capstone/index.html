@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure P2P Messaging with PeerJS</title>
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Secure P2P Messaging with PeerJS</h1>
+
+    <!-- Peer Connection -->
+    <h2>Your Peer ID</h2>
+    <pre id="peerID">Generating...</pre>
+
+    <h2>Connect to Peer</h2>
+    <input type="text" id="remotePeerInput" placeholder="Enter Peer ID">
+    <button id="connectButton">Connect</button>
+
+    <!-- Messaging -->
+    <h2>Send a Secure Message</h2>
+    <textarea id="messageToSend" placeholder="Type your message..."></textarea>
+    <button id="sendMessageButton">Send Message</button>
+
+    <h2>Incoming Messages</h2>
+    <div id="incomingMessages"></div>
+
+    <h2>Debugging Log</h2>
+    <div id="logStatus" style="background:#f4f4f4; padding:10px; border:1px solid #ccc; max-height:200px; overflow-y:scroll;"></div>
+
+    <script src="keyGeneration.js"></script>
+    <script src="encryption.js"></script>
+    <script src="decryption.js"></script>
+    <script src="peerConnection.js"></script>
+</body>
+</html>
