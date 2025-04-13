@@ -4,14 +4,13 @@ document.getElementById("decryptWithUserKeysButton").addEventListener("click", a
     const encryptedMessage = document.getElementById("encryptedMessageToDecrypt").value;
 
     if (!userPublicKeyString || !userPrivateKeyString || !encryptedMessage) {
-        console.error("Please fill in all fields.");
+        console.error("⚠️ Please fill in all fields.");
         return;
     }
 
     try {
         console.log("Attempting to decrypt the message with user-provided keys...");
 
-        // Ensure keys are in correct base64 format
         const privateKey = await importPrivateKey(userPrivateKeyString);
         const encryptedBuffer = base64ToArrayBuffer(encryptedMessage);
 
@@ -23,8 +22,7 @@ document.getElementById("decryptWithUserKeysButton").addEventListener("click", a
             encryptedBuffer
         );
 
-        const decoder = new TextDecoder();
-        const decryptedMessage = decoder.decode(decryptedData);
+        const decryptedMessage = new TextDecoder().decode(decryptedData);
         console.log("Decryption with user keys successful");
 
         document.getElementById("userDecryptedMessage").textContent = decryptedMessage;

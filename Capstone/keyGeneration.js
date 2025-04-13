@@ -1,9 +1,6 @@
-// Wait for the DOM to be fully loaded before executing any JavaScript
 document.addEventListener('DOMContentLoaded', function () {
-    // Now it's safe to access DOM elements and add event listeners
     const generateKeysButton = document.getElementById("generateKeysButton");
 
-    // Check if the button exists to avoid potential errors
     if (generateKeysButton) {
         generateKeysButton.addEventListener("click", async function () {
             // Generate RSA keys
@@ -20,6 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // Store the keys in localStorage
             localStorage.setItem("publicKey", publicKeyString);
             localStorage.setItem("privateKey", privateKeyString);
+
+            // Log the keys for debugging
+            console.log("RSA Public Key:", publicKeyString);
+            console.log("RSA Private Key:", privateKeyString);
 
             // Alert the user that the keys have been generated
             alert("RSA Keys Generated!");
