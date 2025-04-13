@@ -1,38 +1,31 @@
-document.addEventListener('DOMContentLoaded', async function () {
-    // Check if the keys already exist in localStorage
-    const existingPublicKey = localStorage.getItem("publicKey");
-    const existingPrivateKey = localStorage.getItem("privateKey");
+// Wait for the DOM to be fully loaded before executing any JavaScript
+document.addEventListener('DOMContentLoaded', function () {
+    // Now it's safe to access DOM elements and add event listeners
+    const generateKeysButton = document.getElementById("generateKeysButton");
 
-    if (existingPublicKey && existingPrivateKey) {
-        console.log("[KEYS] Public and Private keys already exist in localStorage.");
-        return;  // If keys already exist, do nothing
-    }
+    // Check if the button exists to avoid potential errors
+    if (generateKeysButton) {
+        generateKeysButton.addEventListener("click", async function () {
+            // Generate RSA keys
+            const keys = await window.crypto.subtle.generateKey(
+                { name: "RSA-OAEP", modulusLength: 2048, publicExponent: new Uint8Array([1, 0, 1]), hash: "SHA-256" },
+                true,
+                ["encrypt", "decrypt"]
+            );
 
-    // Generate RSA keys if they don't already exist
-    console.log("[KEYS] Generating RSA keys...");
+            // Export the public and private keys as base64 strings
+            const publicKeyString = await exportKey(keys.publicKey);
+            const privateKeyString = await exportPrivateKey(keys.privateKey);
 
-    try {
-        const keys = await window.crypto.subtle.generateKey(
-            { name: "RSA-OAEP", modulusLength: 2048, publicExponent: new Uint8Array([1, 0, 1]), hash: "SHA-256" },
-            true,
-            ["encrypt", "decrypt"]
-        );
+            // Store the keys in localStorage
+            localStorage.setItem("publicKey", publicKeyString);
+            localStorage.setItem("privateKey", privateKeyString);
 
-        // Export the public and private keys as base64 strings
-        const publicKeyString = await exportKey(keys.publicKey);
-        const privateKeyString = await exportPrivateKey(keys.privateKey);
-
-        // Store the keys in localStorage
-        localStorage.setItem("publicKey", publicKeyString);
-        localStorage.setItem("privateKey", privateKeyString);
-
-        // Log the keys for debugging
-        console.log("RSA Public Key:", publicKeyString);
-        console.log("RSA Private Key:", privateKeyString);
-
-        alert("RSA Keys Generated!");
-    } catch (error) {
-        console.error("[KEYS ERROR] Failed to generate keys:", error);
+            // Alert the user that the keys have been generated
+            alert("RSA Keys Generated!");
+        });
+    } else {
+        console.error('Generate Keys button not found!');
     }
 });
 
