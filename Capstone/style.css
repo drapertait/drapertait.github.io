@@ -82,28 +82,6 @@ input[type="text"], textarea {
     margin-top: 10px;
     border: 1px solid #ddd;
     overflow-y: auto;
-    max-height: 200px;
-}
-
-/* Debugging Log */
-#logStatus {
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    max-height: 150px;
-    overflow-y: auto;
-    font-size: 12px;
-}
-/* Incoming Messages Section */
-#incomingMessages {
-    background: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    min-height: 50px;
-    margin-top: 10px;
-    border: 1px solid #ddd;
-    overflow-y: auto;
     max-height: 300px;
     display: flex;
     flex-direction: column;

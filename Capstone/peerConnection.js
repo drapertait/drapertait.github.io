@@ -9,14 +9,21 @@ peer.on("open", (id) => {
     logStatus(`Your Peer ID: ${id}`);
 });
 
-let conn = null; 
+let conn = null;
 
-document.getElementById("connectButton").addEventListener("click", function () {
+document.getElementById("connectButton").addEventListener("click", async function () {
     const remotePeerID = document.getElementById("remotePeerInput").value.trim();
     
     if (!remotePeerID) {
         alert("Enter a valid Peer ID.");
         logStatus("⚠️ No Peer ID entered for connection.");
+        return;
+    }
+
+    // Ensure keys are generated before attempting to connect
+    const publicKeyString = localStorage.getItem("publicKey");
+    if (!publicKeyString) {
+        alert("Keys not generated. Please wait...");
         return;
     }
 
@@ -111,7 +118,6 @@ document.getElementById("sendMessageButton").addEventListener("click", async fun
     }
 });
 
-
 async function receiveEncryptedMessage(encryptedMessage) {
     console.log("[PEERJS] Received Encrypted Message:", encryptedMessage);
     logStatus("📩 Received encrypted message!");
@@ -137,7 +143,6 @@ async function receiveEncryptedMessage(encryptedMessage) {
         logStatus(`❌ Decryption error: ${error.message}`);
     }
 }
-
 
 // Logs status updates to the UI
 function logStatus(message) {
