@@ -37,6 +37,9 @@ document.getElementById("connectButton").addEventListener("click", async functio
         document.getElementById("peerID").textContent += " ✅ Connected!";
         logStatus(`✅ Successfully connected to ${remotePeerID}!`);
         alert("Connection Established!");
+
+        // After successful connection, log public keys
+        logPublicKeys();
     });
 
     conn.on("data", (data) => receiveEncryptedMessage(data));
@@ -65,6 +68,9 @@ peer.on("connection", (incomingConn) => {
         document.getElementById("peerID").textContent += " ✅ Connected!";
         alert("Peer connected successfully!");
         logStatus("✅ Peer successfully connected!");
+
+        // After successful connection, log public keys
+        logPublicKeys();
     });
 
     conn.on("data", (data) => receiveEncryptedMessage(data));
@@ -141,6 +147,21 @@ async function receiveEncryptedMessage(encryptedMessage) {
     } catch (error) {
         console.error("[DECRYPTION ERROR] Failed to decrypt message:", error);
         logStatus(`❌ Decryption error: ${error.message}`);
+    }
+}
+
+// Logs public keys to the debugging log
+function logPublicKeys() {
+    const publicKeyString = localStorage.getItem("publicKey");
+    logStatus(`📤 Your Public Key: ${publicKeyString}`);
+
+    // Assuming you have a way to get the other peer's public key (this might be an issue if you don't exchange public keys before connecting)
+    // For the sake of this example, we'll assume it's in the `conn` object
+    if (conn) {
+        // In a real case, you might need to exchange the public keys during the handshake
+        logStatus(`📥 Other Peer’s Public Key: ${conn.peer}`);
+    } else {
+        logStatus("⚠️ Unable to retrieve the other peer's public key.");
     }
 }
 
