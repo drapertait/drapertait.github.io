@@ -38,11 +38,23 @@ document.getElementById("connectButton").addEventListener("click", async functio
         logStatus(`✅ Successfully connected to ${remotePeerID}!`);
         alert("Connection Established!");
 
-        // After successful connection, log public keys
+        // Send the public key after connection is successful
+        const publicKeyString = localStorage.getItem("publicKey");
+        conn.send({ type: 'publicKey', publicKey: publicKeyString });
+
+        // Log your public key
         logPublicKeys();
     });
 
-    conn.on("data", (data) => receiveEncryptedMessage(data));
+    conn.on("data", (data) => {
+        if (data.type === 'publicKey') {
+            const otherPeerPublicKey = data.publicKey;
+            logStatus(`📥 Received other peer’s public key: ${otherPeerPublicKey}`);
+        }
+
+        // Handle encrypted message
+        receiveEncryptedMessage(data);
+    });
 
     conn.on("close", () => {
         console.log("[PEERJS] Connection closed.");
@@ -69,11 +81,23 @@ peer.on("connection", (incomingConn) => {
         alert("Peer connected successfully!");
         logStatus("✅ Peer successfully connected!");
 
-        // After successful connection, log public keys
+        // Send the public key after connection is successful
+        const publicKeyString = localStorage.getItem("publicKey");
+        conn.send({ type: 'publicKey', publicKey: publicKeyString });
+
+        // Log your public key
         logPublicKeys();
     });
 
-    conn.on("data", (data) => receiveEncryptedMessage(data));
+    conn.on("data", (data) => {
+        if (data.type === 'publicKey') {
+            const otherPeerPublicKey = data.publicKey;
+            logStatus(`📥 Received other peer’s public key: ${otherPeerPublicKey}`);
+        }
+
+        // Handle encrypted message
+        receiveEncryptedMessage(data);
+    });
 
     conn.on("close", () => {
         console.log("[PEERJS] Peer disconnected.");
@@ -155,10 +179,8 @@ function logPublicKeys() {
     const publicKeyString = localStorage.getItem("publicKey");
     logStatus(`📤 Your Public Key: ${publicKeyString}`);
 
-    // Assuming you have a way to get the other peer's public key (this might be an issue if you don't exchange public keys before connecting)
-    // For the sake of this example, we'll assume it's in the `conn` object
-    if (conn) {
-        // In a real case, you might need to exchange the public keys during the handshake
+    // Assuming the public key of the other peer is already received and stored
+    if (conn && conn.peer) {
         logStatus(`📥 Other Peer’s Public Key: ${conn.peer}`);
     } else {
         logStatus("⚠️ Unable to retrieve the other peer's public key.");
