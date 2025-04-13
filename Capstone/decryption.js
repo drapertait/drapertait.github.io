@@ -8,6 +8,7 @@ async function decryptMessage(encryptedMessage, privateKeyString) {
         const privateKey = await importPrivateKey(privateKeyString);
         console.log("[DECRYPTION] Private key imported successfully.");
 
+        // Convert the encrypted message from base64 to ArrayBuffer
         const encryptedBuffer = base64ToArrayBuffer(encryptedMessage);
         console.log("[DECRYPTION] Encrypted buffer:", encryptedBuffer);
 
