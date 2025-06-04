@@ -1,144 +1,104 @@
-/* Custom styles for the three-column layout */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #222;
+    background-color: #fff;
+    margin: 0;
+}
+
 .container {
-    max-width: 100%; /* Full width container */
+    max-width: 100%;
 }
 
-/* Styles for the slides to fit well in the middle column */
 #home, #skills, #projects, #contact {
-    width: 100%; /* Ensure slides fit the column width */
-    margin: center; /* Centering within the column */
-    min-height: 500px; /* Adjust as needed */
-    color: #131b23;
-    background-image: url('yellow\ balls\ copy.png');
+    width: 100%;
+    margin: auto;
+    padding: 100px 0;
 }
 
-
-
-/* Styles for individual slides with background images */
-#home {
-    background-image: url('yellow\ balls\ copy.png');
-    background-size: contain;
-    background-position: center;
-    background-color: none;
-    background-repeat: no-repeat;
-
-
-}
-
-#skills {
-    background-image: url('yellow\ balls\ copy.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#projects {
-    background-image: url('yellow\ balls\ copy.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#contact {
-    background-image: url('yellow\ balls\ copy.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* General slide styles */
-.slide {
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-position: top center; /* Adjust as needed */
-}
-
-@media (max-width: 768px) {
-    .slide {
-        min-height: 300px; /* Shorter height for smaller screens */
-    }
-}
-
-/* Styles for the navbar */
 nav.navbar {
-    height: 200px; /* Adjust this value as needed */
-    padding-top: 40px; /* Adjust top padding */
-    padding-bottom: 40px; /* Adjust bottom padding */
-    background-color: #E7DFC6 !important;
+    background-color: #fff !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
 }
 
 nav.navbar a {
-    font-size: 3rem; /* Adjust font size as needed */
+    font-size: 1.1rem;
+    color: #333;
+}
+
+nav.navbar a:hover {
+    color: #000;
+}
+
+nav h1 {
+    color: #333;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.jumbotron {
+    background-color: #f4f4f4;
+    padding: 2rem;
+    text-align: center;
+}
+
+.projects-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.projects-list li {
+    margin: 10px 0;
+}
+
+.projects-list a {
     color: #2274A5;
+    text-decoration: none;
 }
 
-/* Footer styles */
+.projects-list a:hover {
+    text-decoration: underline;
+}
+
 footer {
-    font-size: 1rem; /* Adjust font size as needed */    
-    /* Add any specific styles for your footer here */
+    background-color: #f4f4f4;
+    color: #333;
+    padding-top: 2rem;
 }
 
-/* Styles for the skills section */
+/* Skills section */
 .skill-item {
-    margin-bottom: 20px; /* Space between skill bars */
-    color: black;
+    margin-bottom: 20px;
+    color: #000;
 }
 
 .skill-name {
-    font-size: 16px; /* Adjust as needed */
-    margin-bottom: 5px; /* Space between skill name and bar */
-    color: black;
-}
-
-.mb-3 {
-    color: black;
+    font-size: 16px;
+    margin-bottom: 5px;
 }
 
 .progress {
-    background-color: #e1e1e1; /* Light grey background */
-    border-radius: 5px; /* Rounded corners */
+    background-color: #e1e1e1;
+    border-radius: 5px;
     height: 20px;
 }
 
 .progress-bar {
-    color: black; /* Color of the text inside the bar */
+    color: #000;
     display: flex;
-    align-items: center; /* Centers text vertically */
-    justify-content: center; /* Centers text horizontally */
-    font-weight: bold; /* Makes the text bold */
-    transition: width 1s ease-in-out; /* Smooth transition for bar animation */
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
-/* Custom color classes for progress bars */
 .progress .color-python { background-color: #0d8029; }
 .progress .color-html { background-color: #95bd39; }
 .progress .color-javascript { background-color: #bea328; }
 .progress .color-css { background-color: #80ca3b; }
 .progress .color-bootstrap { background-color: #bd6116; }
 .progress .color-cpp { background-color: #7ebe17; }
-.progress .color-json { background-color: #6eaf18; } /* Example color for JSON */
-.progress .color-xml { background-color: #6eaf18; } /* Example color for XML */
-
-
-
-.row {
-
-    background-color: white;
-}
-
-nav h1 {
-    color: #816C61;
-}
-
-.jumbotron {
-
-    background-color: #E7DFC6;
-}
-
-
-#middle {
-     background-color: #f8f7f2; 
-}
-
-
+.progress .color-json { background-color: #6eaf18; }
+.progress .color-xml { background-color: #6eaf18; }
