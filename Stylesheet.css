@@ -30,7 +30,7 @@ nav h1 {
 }
 
 .hero {
-    height: 100vh;
+    padding: 80px 0;
     background-size: cover;
     background-position: center;
     display: flex;
