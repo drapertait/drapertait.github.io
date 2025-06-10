@@ -136,6 +136,11 @@ footer p {
     display: inline-block;
 }
 
+/* Reduce top spacing on the Skills page */
+.skills-section {
+    padding-top: 20px;
+}
+
 
 @media (max-width: 768px) {
     .home-hero {
