@@ -119,3 +119,12 @@ footer p {
 .progress .color-cpp { background-color: #2ecc71; }
 .progress .color-json { background-color: #16a085; }
 .progress .color-xml { background-color: #6ab04c; }
+
+/* Compact spacing for Skills page */
+.hero-small {
+    padding-bottom: 20px;
+}
+
+.skills-section {
+    padding-top: 20px;
+}
