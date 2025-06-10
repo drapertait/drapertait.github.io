@@ -119,3 +119,21 @@ footer p {
 .progress .color-cpp { background-color: #2ecc71; }
 .progress .color-json { background-color: #16a085; }
 .progress .color-xml { background-color: #6ab04c; }
+
+/* Specific sizing for the homepage background images */
+.home-hero {
+    min-height: 70vh;
+}
+
+.home-section {
+    min-height: 50vh;
+}
+
+@media (max-width: 768px) {
+    .home-hero {
+        min-height: 60vh;
+    }
+    .home-section {
+        min-height: 40vh;
+    }
+}
