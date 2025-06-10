@@ -122,18 +122,26 @@ footer p {
 
 /* Specific sizing for the homepage background images */
 .home-hero {
-    min-height: 70vh;
+    min-height: 52.5vh;
 }
 
 .home-section {
-    min-height: 50vh;
+    min-height: 37.5vh;
 }
+.overlay-box {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
 
 @media (max-width: 768px) {
     .home-hero {
-        min-height: 60vh;
+        min-height: 45vh;
     }
     .home-section {
-        min-height: 40vh;
+        min-height: 30vh;
     }
 }
