@@ -30,18 +30,48 @@
     </section>
 
     <section class="profile-section">
-        <div class="container" data-aos="fade-up">
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="card profile-card">
-                        <img src="https://images.unsplash.com/photo-1506898665067-67c11c17a7c5?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Sample profile">
-                        <div class="card-body">
-                            <h5 class="card-title">Alex, 28</h5>
-                            <p class="card-text">Loves hiking, coffee and dogs.</p>
-                            <a href="#" class="btn dealbreaker-btn"><i class="bi bi-heart-fill me-1"></i>Like</a>
+        <div class="container profile-carousel" data-aos="fade-up">
+            <div id="profileCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card profile-card mx-auto" style="width: 18rem;">
+                            <img src="https://images.unsplash.com/photo-1506898665067-67c11c17a7c5?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Sample profile">
+                            <div class="card-body">
+                                <h5 class="card-title">Alex, 28</h5>
+                                <p class="card-text">Loves hiking, coffee and dogs.</p>
+                                <a href="#" class="btn dealbreaker-btn"><i class="bi bi-heart-fill me-1"></i>Like</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card profile-card mx-auto" style="width: 18rem;">
+                            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Sample profile">
+                            <div class="card-body">
+                                <h5 class="card-title">Jordan, 31</h5>
+                                <p class="card-text">Avid traveler and foodie.</p>
+                                <a href="#" class="btn dealbreaker-btn"><i class="bi bi-heart-fill me-1"></i>Like</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card profile-card mx-auto" style="width: 18rem;">
+                            <img src="https://images.unsplash.com/photo-1529626455594-4ae9df07aeb8?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Sample profile">
+                            <div class="card-body">
+                                <h5 class="card-title">Taylor, 26</h5>
+                                <p class="card-text">Coffee fanatic and book lover.</p>
+                                <a href="#" class="btn dealbreaker-btn"><i class="bi bi-heart-fill me-1"></i>Like</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#profileCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#profileCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </section>
@@ -57,6 +87,41 @@
                 <li>Your standards. Your match. Your love.</li>
             </ul>
             <p class="text-center">Dating that respects your deal breakers.</p>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="container quote-carousel" data-aos="fade-up">
+            <div id="quoteCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner text-center">
+                    <div class="carousel-item active">
+                        <blockquote class="blockquote">
+                            <p>&quot;I found my perfect match thanks to Deal Breaker!&quot;</p>
+                            <footer class="blockquote-footer">Jane</footer>
+                        </blockquote>
+                    </div>
+                    <div class="carousel-item">
+                        <blockquote class="blockquote">
+                            <p>&quot;The deal breaker approach saved me so much time.&quot;</p>
+                            <footer class="blockquote-footer">Mike</footer>
+                        </blockquote>
+                    </div>
+                    <div class="carousel-item">
+                        <blockquote class="blockquote">
+                            <p>&quot;Finally a dating app that respects my boundaries.&quot;</p>
+                            <footer class="blockquote-footer">Sara</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#quoteCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#quoteCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
     </section>
 
