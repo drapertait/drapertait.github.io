@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap');
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -174,7 +174,11 @@ footer p {
 }
 /* Deal Breaker dating app styles */
 .dealbreaker-nav {
-    background: linear-gradient(45deg, #ff416c, #ff4b2b) !important;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4) !important;
+}
+.dealbreaker-nav .navbar-brand {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
 }
 
 .dealbreaker-hero {
@@ -192,26 +196,31 @@ footer p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 75, 43, 0.5);
+    background: rgba(255, 188, 200, 0.5);
     z-index: 0;
 }
 
 .dealbreaker-hero .overlay-box {
     position: relative;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
     border-radius: 15px;
+}
+.dealbreaker-hero .display-4 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
 }
 
 .dealbreaker-btn {
-    background-color: #ff416c;
-    border-color: #ff416c;
+    background-color: #ff9a9e;
+    border-color: #ff9a9e;
     color: #fff;
 }
 
 .dealbreaker-btn:hover {
-    background-color: #ff4b2b;
-    border-color: #ff4b2b;
+    background-color: #f68f9d;
+    border-color: #f68f9d;
 }
 
 .profile-card {
@@ -266,7 +275,7 @@ footer p {
 }
 
 .feature-icon {
-    color: #ff416c;
+    color: #ff6fa5;
     font-size: 2.5rem;
 }
 
@@ -279,14 +288,14 @@ footer p {
 }
 
 .why-section .why-item i {
-    color: #ff416c;
+    color: #ff6fa5;
     font-size: 1.25rem;
     margin-right: 0.5rem;
 }
 
 /* Call to action */
 .cta-section {
-    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
     color: #fff;
     text-align: center;
     padding: 60px 0;
@@ -294,11 +303,11 @@ footer p {
 
 .cta-section .btn {
     background-color: #fff;
-    color: #ff416c;
+    color: #ff6fa5;
     border: none;
 }
 
 .cta-section .btn:hover {
     background-color: #ffe6e6;
-    color: #ff4b2b;
+    color: #f68f9d;
 }
