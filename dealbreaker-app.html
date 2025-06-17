@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deal Breaker - Home</title>
+    <link rel="stylesheet" href="Stylesheet.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body class="d-flex flex-column" style="min-height:100vh;">
+    <header class="navbar navbar-dark dealbreaker-nav">
+        <div class="container"><a class="navbar-brand" href="dealbreaker.html">Deal Breaker</a></div>
+    </header>
+
+    <main class="flex-grow-1 d-flex flex-column justify-content-center align-items-center" style="padding-bottom:80px;">
+        <div id="profileContainer" class="card profile-card" style="width: 18rem;">
+            <img id="profileImage" src="" class="card-img-top" alt="Profile">
+            <div class="card-body text-center">
+                <h5 id="profileName" class="card-title"></h5>
+                <p id="profileBio" class="card-text"></p>
+                <div class="d-flex justify-content-around">
+                    <button id="passBtn" class="btn btn-secondary"><i class="bi bi-x-lg"></i></button>
+                    <button id="likeBtn" class="btn dealbreaker-btn"><i class="bi bi-heart-fill"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <nav class="navbar fixed-bottom navbar-light bg-light border-top">
+        <div class="container-fluid justify-content-around">
+            <a class="nav-link text-center" href="#"><i class="bi bi-house-door-fill"></i><br>Home</a>
+            <a class="nav-link text-center" href="#"><i class="bi bi-search"></i><br>Explore</a>
+            <a class="nav-link text-center" href="#"><i class="bi bi-chat-dots-fill"></i><br>Chat</a>
+            <a class="nav-link text-center" href="#"><i class="bi bi-person-fill"></i><br>Profile</a>
+        </div>
+    </nav>
+
+<script>
+const profiles = [
+    {
+        name: 'Alex, 28',
+        bio: 'Loves hiking, coffee and dogs.',
+        img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+        name: 'Jordan, 31',
+        bio: 'Avid traveler and foodie.',
+        img: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+        name: 'Taylor, 26',
+        bio: 'Coffee fanatic and book lover.',
+        img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80'
+    }
+];
+let currentIndex = 0;
+function showProfile(index){
+    const profile = profiles[index];
+    document.getElementById('profileImage').src = profile.img;
+    document.getElementById('profileName').textContent = profile.name;
+    document.getElementById('profileBio').textContent = profile.bio;
+}
+function nextProfile(){
+    currentIndex = (currentIndex + 1) % profiles.length;
+    showProfile(currentIndex);
+}
+document.getElementById('likeBtn').addEventListener('click', nextProfile);
+document.getElementById('passBtn').addEventListener('click', nextProfile);
+showProfile(currentIndex);
+</script>
+</body>
+</html>
