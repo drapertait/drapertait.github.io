@@ -335,3 +335,26 @@ footer p {
 .bg-dealbreaker {
     background-color: #ff9a9e !important;
 }
+
+/* Outline style for secondary buttons */
+.dealbreaker-outline-btn {
+    color: #ff9a9e;
+    border: 1px solid #ff9a9e;
+    background-color: transparent;
+}
+
+.dealbreaker-outline-btn:hover {
+    background-color: #ff9a9e;
+    color: #fff;
+}
+
+/* Progress bar styling for registration form */
+.dealbreaker-progress {
+    height: 8px;
+    background-color: #e1e1e1;
+    border-radius: 5px;
+}
+
+.dealbreaker-progress .progress-bar {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+}
