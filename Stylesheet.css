@@ -229,3 +229,19 @@ footer p {
 .profile-card .card-body {
     text-align: center;
 }
+
+/* Carousel styles for Deal Breaker page */
+.profile-carousel .carousel-item {
+    display: flex;
+    justify-content: center;
+}
+
+.quote-carousel blockquote {
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+.quote-carousel footer {
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
