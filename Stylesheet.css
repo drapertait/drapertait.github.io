@@ -232,10 +232,13 @@ footer p {
 
 /* Carousel styles for Deal Breaker page */
 .profile-carousel .carousel-item {
+    display: none;
     justify-content: center;
 }
 
-.profile-carousel .carousel-item.active {
+.profile-carousel .carousel-item.active,
+.profile-carousel .carousel-item-next,
+.profile-carousel .carousel-item-prev {
     display: flex;
 }
 
