@@ -172,3 +172,60 @@ footer p {
     z-index: 1;
     border-radius: 0.25rem;
 }
+/* Deal Breaker dating app styles */
+.dealbreaker-nav {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b) !important;
+}
+
+.dealbreaker-hero {
+    position: relative;
+    padding: 100px 0;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.dealbreaker-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 75, 43, 0.5);
+    z-index: 0;
+}
+
+.dealbreaker-hero .overlay-box {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+}
+
+.dealbreaker-btn {
+    background-color: #ff416c;
+    border-color: #ff416c;
+    color: #fff;
+}
+
+.dealbreaker-btn:hover {
+    background-color: #ff4b2b;
+    border-color: #ff4b2b;
+}
+
+.profile-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.profile-card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.profile-card .card-body {
+    text-align: center;
+}
