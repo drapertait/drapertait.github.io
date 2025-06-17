@@ -245,3 +245,54 @@ footer p {
     margin-top: 0.5rem;
     font-weight: 600;
 }
+
+/* Features grid styling */
+.features-section .card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.features-section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.feature-icon {
+    color: #ff416c;
+    font-size: 2.5rem;
+}
+
+/* Why section items */
+.why-section .why-item {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.why-section .why-item i {
+    color: #ff416c;
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+/* Call to action */
+.cta-section {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: #fff;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.cta-section .btn {
+    background-color: #fff;
+    color: #ff416c;
+    border: none;
+}
+
+.cta-section .btn:hover {
+    background-color: #ffe6e6;
+    color: #ff4b2b;
+}
