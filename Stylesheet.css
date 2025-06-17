@@ -311,3 +311,27 @@ footer p {
     background-color: #ffe6e6;
     color: #f68f9d;
 }
+
+/* Registration form styles */
+.dealbreaker-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dealbreaker-form .form-control {
+    border-radius: 10px;
+    border-color: #ff9a9e;
+}
+
+.dealbreaker-form .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 154, 158, 0.25);
+    border-color: #ff9a9e;
+}
+
+.bg-dealbreaker {
+    background-color: #ff9a9e !important;
+}
