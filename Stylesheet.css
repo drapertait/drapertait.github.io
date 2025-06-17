@@ -327,7 +327,17 @@ footer p {
     border-color: #ff9a9e;
 }
 
+.dealbreaker-form .form-select {
+    border-radius: 10px;
+    border-color: #ff9a9e;
+}
+
 .dealbreaker-form .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 154, 158, 0.25);
+    border-color: #ff9a9e;
+}
+
+.dealbreaker-form .form-select:focus {
     box-shadow: 0 0 0 0.2rem rgba(255, 154, 158, 0.25);
     border-color: #ff9a9e;
 }
