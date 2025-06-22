@@ -20,10 +20,31 @@
             <p class="mb-4">Update your details.</p>
         </div>
         <div class="w-100" style="max-width:500px;">
-            <form id="profileForm">
+            <form id="profileForm" class="dealbreaker-form">
                 <div class="mb-3">
                     <label for="nameInput" class="form-label">Name</label>
                     <input type="text" class="form-control" id="nameInput">
+                </div>
+                <div class="mb-3">
+                    <label for="genderInput" class="form-label">Gender</label>
+                    <select class="form-select" id="genderInput">
+                        <option value="">Select gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="emailInput" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="emailInput">
+                </div>
+                <div class="mb-3">
+                    <label for="passwordInput" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="passwordInput">
+                </div>
+                <div class="mb-3">
+                    <label for="profileImageInput" class="form-label">Profile Image</label>
+                    <input class="form-control" type="file" id="profileImageInput">
+                    <img id="profileImagePreview" class="mt-2" style="max-width:100%; display:none;"/>
                 </div>
                 <div class="mb-3">
                     <label for="bioInput" class="form-label">Bio</label>
@@ -46,17 +67,59 @@
     <script src="theme.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function(){
-        const data = JSON.parse(localStorage.getItem('myProfile')) || {name:'', bio:''};
-        document.getElementById('nameInput').value = data.name;
-        document.getElementById('bioInput').value = data.bio;
+        const data = JSON.parse(localStorage.getItem('registrationData')) || {};
+        document.getElementById('nameInput').value = data.name || '';
+        document.getElementById('genderInput').value = data.gender || '';
+        document.getElementById('emailInput').value = data.email || '';
+        document.getElementById('passwordInput').value = data.password || '';
+        document.getElementById('bioInput').value = data.bio || '';
+        if(data.profileImage){
+            const preview = document.getElementById('profileImagePreview');
+            preview.src = data.profileImage;
+            preview.style.display = 'block';
+        }
     });
+
+    document.getElementById('profileImageInput').addEventListener('change', function(){
+        const file = this.files[0];
+        if(file){
+            const reader = new FileReader();
+            reader.onload = function(e){
+                const preview = document.getElementById('profileImagePreview');
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
     document.getElementById('saveProfile').addEventListener('click', function(){
+        const fileInput = document.getElementById('profileImageInput');
         const data = {
             name: document.getElementById('nameInput').value,
+            gender: document.getElementById('genderInput').value,
+            email: document.getElementById('emailInput').value,
+            password: document.getElementById('passwordInput').value,
             bio: document.getElementById('bioInput').value
         };
-        localStorage.setItem('myProfile', JSON.stringify(data));
-        alert('Profile saved');
+        const finalize = function(){
+            localStorage.setItem('registrationData', JSON.stringify(data));
+            alert('Profile saved');
+        };
+        if(fileInput.files[0]){
+            const reader = new FileReader();
+            reader.onload = function(e){
+                data.profileImage = e.target.result;
+                finalize();
+            };
+            reader.readAsDataURL(fileInput.files[0]);
+        } else {
+            const stored = JSON.parse(localStorage.getItem('registrationData')) || {};
+            if(stored.profileImage){
+                data.profileImage = stored.profileImage;
+            }
+            finalize();
+        }
     });
     </script>
 </body>

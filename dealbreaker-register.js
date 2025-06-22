@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
         updateProgress(index);
     }
 
-    document.getElementById('registrationForm').addEventListener('click', (e) => {
+    const form = document.getElementById('registrationForm');
+    form.addEventListener('click', (e) => {
         if (e.target.classList.contains('next-step')) {
             e.preventDefault();
             if (currentStep < steps.length - 1) {
@@ -31,6 +32,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentStep--;
                 showStep(currentStep);
             }
+        }
+    });
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = {
+            name: document.getElementById('name').value,
+            gender: document.getElementById('gender').value,
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value,
+            bio: '',
+        };
+        const fileInput = document.getElementById('profileImage');
+        const finalize = () => {
+            localStorage.setItem('registrationData', JSON.stringify(data));
+            window.location.href = 'dealbreaker-app.html';
+        };
+        if (fileInput && fileInput.files[0]) {
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                data.profileImage = ev.target.result;
+                finalize();
+            };
+            reader.readAsDataURL(fileInput.files[0]);
+        } else {
+            finalize();
         }
     });
 
