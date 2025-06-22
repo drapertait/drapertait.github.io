@@ -37,6 +37,7 @@
         </div>
     </nav>
 
+<script src="theme.js"></script>
 <script>
 const profiles = [
     {
@@ -66,9 +67,17 @@ function nextProfile(){
     currentIndex = (currentIndex + 1) % profiles.length;
     showProfile(currentIndex);
 }
-document.getElementById('likeBtn').addEventListener('click', nextProfile);
+function likeProfile(){
+    const liked = JSON.parse(localStorage.getItem('likedProfiles')) || [];
+    liked.push(profiles[currentIndex]);
+    localStorage.setItem('likedProfiles', JSON.stringify(liked));
+    nextProfile();
+}
+document.getElementById('likeBtn').addEventListener('click', likeProfile);
 document.getElementById('passBtn').addEventListener('click', nextProfile);
 showProfile(currentIndex);
 </script>
+
+
 </body>
 </html>

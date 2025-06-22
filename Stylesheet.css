@@ -368,3 +368,27 @@ footer p {
 .dealbreaker-progress .progress-bar {
     background: linear-gradient(45deg, #ff9a9e, #fad0c4);
 }
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #f8f9fa;
+}
+
+body.dark-mode .dealbreaker-nav,
+body.dark-mode .navbar {
+    background: #212529 !important;
+}
+
+body.dark-mode .list-group-item {
+    background-color: #343a40;
+    color: #f8f9fa;
+    border-color: #454d55;
+}
+
+body.dark-mode .navbar-light.bg-light {
+    background-color: #212529 !important;
+}
+
+body.dark-mode a.nav-link {
+    color: #f8f9fa !important;
+}
